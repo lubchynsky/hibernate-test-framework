@@ -17,7 +17,7 @@ public class Main {
         Lecturer lecturer = new Lecturer(1, "Henry");
         Course course = new Course(1, "Math");
         course.setLecturer(lecturer);
-        Student student = new Student(1, "John");
+        Student student = new Student(2, "Johny");
         course.addStudent(student);
         em.persist(lecturer);
         em.persist(course);
