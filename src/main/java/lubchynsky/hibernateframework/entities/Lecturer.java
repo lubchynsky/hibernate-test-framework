@@ -17,6 +17,7 @@ public class Lecturer {
 
     @Id
     @Column(name = "LECTURER_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     private int id;
 
@@ -28,8 +29,7 @@ public class Lecturer {
     @OneToMany(mappedBy = "lecturer")
     private List<Course> courses = new ArrayList<>();
 
-    public Lecturer(int id, String name) {
-        this.id = id;
+    public Lecturer(String name) {
         this.name = name;
     }
 

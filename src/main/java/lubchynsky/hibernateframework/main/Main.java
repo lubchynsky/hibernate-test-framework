@@ -14,10 +14,14 @@ public class Main {
 
         em.getTransaction().begin();
 
-        Lecturer lecturer = new Lecturer(1, "Henry");
-        Course course = new Course(1, "Math");
+        Lecturer lecturer = new Lecturer("Henry");
+        Course course = new Course("Math");
         course.setLecturer(lecturer);
-        Student student = new Student(2, "Johny");
+        Student student = new Student("Johny");
+        student.setCity("Berlin");
+        student.setCountry("Germany");
+        student.setEmail("test@test.com");
+        //student.setPhone("123-345-567");
         course.addStudent(student);
         em.persist(lecturer);
         em.persist(course);

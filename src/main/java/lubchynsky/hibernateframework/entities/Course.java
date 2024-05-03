@@ -16,6 +16,7 @@ public class Course {
 
     @Id
     @Column(name = "COURSE_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     private int id;
 
@@ -34,8 +35,7 @@ public class Course {
     @JoinColumn(name = "STUDENT_ID")
     List<Student> students = new ArrayList<>();
 
-    public Course(int id, String courseName) {
-        this.id = id;
+    public Course(String courseName) {
         this.courseName = courseName;
     }
 
